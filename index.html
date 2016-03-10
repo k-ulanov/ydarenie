@@ -89,6 +89,7 @@ function read(query)
     search.placeholder = "";
     output.innerHTML = "";
     
+    console.log(document.URL.split("?")[1]);
         if(document.URL.split("?").length > 1)
     {
         query = document.URL.split("?")[1];
