@@ -773,6 +773,11 @@ function read(query)
     if(search.value == "") placeholder();
 }
     
+    
+function readurl()
+{
+    console.log(window.location.pathname);
+}
                 
 function placeholder()
 {
@@ -821,7 +826,7 @@ function placeholder()
                     </script>
                 </head>
     
-    <body onload="placeholder()">
+    <body onload="placeholder(),readurl()">
         <div class="wrapper">
                 <div class="content">
                     <input autofocus id="search" autocomplete="off" value="" onkeyup="read(this.value)">
