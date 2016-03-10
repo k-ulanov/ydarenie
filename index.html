@@ -90,7 +90,7 @@ function read(query)
     
         if(document.URL.split("?").length > 1)
     {
-        search.query = console.log(document.URL.split("?")[1]);
+        search.query = document.URL.split("?")[1];
     }
     
     query = query.replace(/^[^А-Яа-яёЁё]?[^А-Яа-яёЁё]+/,""); //убираем из запроса не кириллицу
