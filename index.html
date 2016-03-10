@@ -84,6 +84,7 @@
 function read(query)
 {
 
+    var query;
     
     search.placeholder = "";
     output.innerHTML = "";
@@ -91,6 +92,8 @@ function read(query)
         if(document.URL.split("?").length > 1)
     {
         query = document.URL.split("?")[1];
+        console.log(query);
+        
     }
     
     query = query.replace(/^[^А-Яа-яёЁё]?[^А-Яа-яёЁё]+/,""); //убираем из запроса не кириллицу
