@@ -81,21 +81,24 @@
 <script src="words.js"></script>
 
 <script>
+function readurl()
+{
+    var url = document.URL.split("?");
+    
+    if(url.length > 1)
+    {
+        search.value = url;
+        read(url);
+    }
+    else placeholder();
+}
+
 function read(query)
 {
 
     search.placeholder = "";
     output.innerHTML = "";
     
-    
-    if(document.URL.split("?").length > 1)
-    {
-        console.log("has one");
-        query = document.URL.split("?")[1];
-        search.value = query;
-        console.log("query = "+query);
-        
-    }
     
     query = query.replace(/^[^А-Яа-яёЁё]?[^А-Яа-яёЁё]+/,""); //убираем из запроса не кириллицу
     search.value = search.value.replace(/^\s?\s+/,""); //убираем из поля ввода пробелы
@@ -160,7 +163,7 @@ function placeholder()
                     </script>
                 </head>
     
-    <body onload="placeholder()">
+    <body onload="readurl()">
         <div class="wrapper">
                 <div class="content">
                     <input autofocus id="search" autocomplete="off" value="" onkeyup="read(this.value)">
