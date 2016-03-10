@@ -83,8 +83,16 @@
 <script>
 function read(query)
 {
+
+    
     search.placeholder = "";
     output.innerHTML = "";
+    
+        if(document.URL.split("?").length > 1)
+    {
+        search.query = console.log(document.URL.split("?")[1]);
+    }
+    
     query = query.replace(/^[^А-Яа-яёЁё]?[^А-Яа-яёЁё]+/,""); //убираем из запроса не кириллицу
     search.value = search.value.replace(/^\s?\s+/,""); //убираем из поля ввода пробелы
     if (query !== "") //если что-то осталось
