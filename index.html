@@ -101,7 +101,7 @@ function read(query)
     
     
     query = query.replace(/^[^А-Яа-яёЁё]?[^А-Яа-яёЁё]+/,""); //убираем из запроса не кириллицу
-    search.value = search.value.replace(/^\s?\s+/,""); //убираем из поля ввода пробелы
+    if (search.value[0] == " ") search.value = search.value.replace(/^\s?\s+/,""); //убираем из поля ввода пробелы в начале строки, чтобы не скрывался плейсхолдер
     window.location = "#" + query;
     if (query !== "") //если что-то осталось
     {
